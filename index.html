@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MusicToWork 🎧</title>
+  <!-- Fuente creativa: Poppins para textos base, Pacifico para títulos, Indie Flower para el slogan (más cómica y ligera) y Bangers (como respaldo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&family=Indie+Flower&family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="img/fondosuperior.jpg" alt="Fondo superior" class="header-image">
+    <div class="header-content">
+      <h1>🎵 MusicToWork 🎵</h1>
+      <p class="slogan">
+        La música nos une, no importa las distancias!<br>
+        <strong>Colombia + Argentina + Brazil + USA + Perú + Venezuela + España</strong>
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección de ritmos -->
+    <section class="music-section">
+      <!-- ROCK -->
+      <div class="music-box rock-box" style="background-image: url('img/ROCK.PNG')">
+        <div class="music-box-header">
+          <h2>Rock</h2>
+        </div>
+        <div class="music-box-body">
+          <!-- LISTA DE MUSICA ROCK -->
+          <select onchange="playSong(this.value)">
+            <option disabled selected>Selecciona una canción</option>
+            <!-- LISTA DE MUSICA ROCK -->
+            <option value="https://www.youtube.com/embed/9ViQ9A0ddkk">Persiana Americana – Soda Stereo</option>
+            <option value="https://www.youtube.com/embed/K7XcO81TckU">Yendo a la casa de Damián – Cuarteto de Nos</option>
+            <option value="https://www.youtube.com/embed/hgAh2MSt1WE">Tren al Sur – Los Prisioneros</option>
+            <option value="https://www.youtube.com/embed/uEV4RqqnlSE">La Flaca – Andrés Calamaro</option>
+            <option value="https://www.youtube.com/embed/CUdw-urZ3zg">Mil Horas – Los Abuelos de la Nada</option>
+            <option value="https://www.youtube.com/embed/BRuHGchMrD8">Lamento Boliviano – Enanitos Verdes</option>
+            <option value="https://www.youtube.com/embed/kxANxQ_gvq4">Vuelves a ser – La Gusana Ciega</option>
+            <option value="https://www.youtube.com/embed/vVC-oWl_uVQ">No dejes que – Caifanes</option>
+            <option value="https://www.youtube.com/embed/r2g0pM3PMNQ">La Flaca – Jarabe de Palo</option>
+            <option value="https://www.youtube.com/embed/zWjXipKSjdg">Nada Valgo Sin Tu Amor – Juanes</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- POP -->
+      <div class="music-box" style="background-image: url('img/POP.JPG')">
+        <div class="music-box-header">
+          <h2>Pop</h2>
+        </div>
+        <div class="music-box-body">
+          <!-- LISTA DE MUSICA POP -->
+          <select onchange="playSong(this.value)">
+            <option disabled selected>Selecciona una canción</option>
+            <!-- LISTA DE MUSICA POP -->
+            <option value="https://www.youtube.com/embed/7hgwPdW9vbA">Andar Conmigo – Julieta Venegas</option>
+            <option value="https://www.youtube.com/embed/ePXknujERkY">En el 2000 – Natalia Lafourcade</option>
+            <option value="https://www.youtube.com/embed/Gk31n-v9rSA">"Perfecta"! – Miranda</option>
+            <option value="https://www.youtube.com/embed/bUkJLkoh3kA">Rosa Pastel – Belanova</option>
+            <option value="https://www.youtube.com/embed/CDg09zmKNIY">Día tras Día – Andrés Cepeda</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- BALADAS -->
+      <div class="music-box" style="background-image: url('img/BALADAS.jpg')">
+        <div class="music-box-header">
+          <h2>Baladas</h2>
+        </div>
+        <div class="music-box-body">
+          <!-- LISTA DE MUSICA BALADA -->
+          <select onchange="playSong(this.value)">
+            <option disabled selected>Selecciona una canción</option>
+            <!-- LISTA DE MUSICA BALADA -->
+            <option value="https://www.youtube.com/embed/6zYwzR2gXxQ">Disfruto – Carla Morrison</option>
+            <option value="https://www.youtube.com/embed/6b8g7g6s5n8">No – Shakira</option>
+            <option value="https://www.youtube.com/embed/0pqnGHJz6XQ">Someone Like You – Adele</option>
+            <option value="https://www.youtube.com/embed/3JZ4pnN2b6I">El Gato que Está Triste y Azul – Roberto Carlos</option>
+            <option value="https://www.youtube.com/embed/1aXz4s0v8zQ">Amiga – Miguel Bosé</option>
+            <option value="https://www.youtube.com/embed/5bXgY1RGPVY">¡Corre! – Jesse & Joy</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reproductor central con fondo -->
+    <section class="player-section" style="background-image: url('img/recuadro.jpg')">
+      <iframe id="musicPlayer" width="100%" height="400" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    </section>
+
+    <!-- Script para reproducir -->
+    <script>
+      // Al cargar la página se muestra el popup de bienvenida
+      window.onload = function() {
+        alert("Disfruta tu música, disfruta tu día de trabajo");
+      };
+
+      function playSong(url) {
+        document.getElementById("musicPlayer").src = url + "?autoplay=1";
+      }
+    </script>
+
+    <!-- Formulario para agregar canciones -->
+    <section class="form-section">
+      <h2>Agregar Canción</h2>
+      <!-- FORMULARIO DE CANCIONES -->
+      <!-- Se envían nuevos registros al correo musictowork.clup@gmail.com -->
+      <form id="form-cancion" action="mailto:musictowork.clup@gmail.com" method="post" enctype="text/plain">
+        <input type="text" placeholder="Nombre de la canción" required>
+        <input type="url" placeholder="Enlace de YouTube" required>
+        <!-- NUEVO CAMPO: Seleccionar Ritmo -->
+        <select name="ritmo" required>
+          <option disabled selected>Nota: No agregar reguetón ni música no apta para el trabajo</option>
+          <option value="rock">Rock</option>
+          <option value="pop">Pop</option>
+          <option value="baladas">Baladas</option>
+        </select>
+        <button type="submit">Agregar Canción</button>
+      </form>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section class="contact-section">
+      <h2>Contacto</h2>
+      <!-- FORMULARIO DE CONTACTO -->
+      <!-- Los contactos se envían al correo musictowork.clup@gmail.com -->
+      <form id="form-contacto" action="mailto:musictowork.clup@gmail.com" method="post" enctype="text/plain">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea placeholder="Comentario" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <!-- CORREO CONTACTO: musictowork.clup@gmail.com -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MusicToWork. Hecho con 💚 para trabajar mejor con música.</p>
+  </footer>
+</body>
+</html>

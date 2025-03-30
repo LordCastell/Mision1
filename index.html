@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>MusicToWork 🎧</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&family=Indie+Flower&family=Bangers&display=swap" rel="stylesheet">
+  <!-- Fuente creativa: Poppins para textos base, Pacifico para títulos, Indie Flower para el slogan (más cómica y ligera) y Bangers (como respaldo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&family=Indie+Flower&family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
     <!-- Sección de ritmos -->
     <section class="music-section">
       <!-- ROCK -->
-      <div class="music-box rock-box" style="background-image: url('img/ROCK.png')">
+      <div class="music-box rock-box" style="background-image: url('img/ROCK.PNG')">
         <div class="music-box-header">
           <h2>Rock</h2>
         </div>
@@ -107,18 +108,20 @@
       <h2>Agregar Canción</h2>
       <!-- FORMULARIO DE CANCIONES -->
       <!-- Se envían nuevos registros al correo musictowork.clup@gmail.com -->
-      <form id="form-cancion" action="mailto:musictowork.clup@gmail.com" method="post" enctype="text/plain">
-        <input type="text" placeholder="Nombre de la canción" required>
-        <input type="url" placeholder="Enlace de YouTube" required>
-        <!-- NUEVO CAMPO: Seleccionar Ritmo -->
-        <select name="ritmo" required>
-          <option disabled selected>Nota: No agregar reguetón ni música no apta para el trabajo</option>
-          <option value="rock">Rock</option>
-          <option value="pop">Pop</option>
-          <option value="baladas">Baladas</option>
-        </select>
-        <button type="submit">Agregar Canción</button>
-      </form>
+      
+<form id="form-cancion" action="https://formspree.io/f/mvgkbbne" method="POST">
+  <!-- Formulario para agregar canciones -->
+  <input type="text" name="cancion" placeholder="Nombre de la canción" required>
+  <input type="url" name="youtube" placeholder="Enlace de YouTube" required>
+  <select name="ritmo" required>
+    <option value="" disabled selected>Selecciona el ritmo</option>
+    <option value="rock">Rock</option>
+    <option value="pop">Pop</option>
+    <option value="balada">Balada</option>
+  </select>
+  <button type="submit">Agregar Canción</button>
+</form>
+
     </section>
 
     <!-- Formulario de contacto -->
@@ -126,12 +129,15 @@
       <h2>Contacto</h2>
       <!-- FORMULARIO DE CONTACTO -->
       <!-- Los contactos se envían al correo musictowork.clup@gmail.com -->
-      <form id="form-contacto" action="mailto:musictowork.clup@gmail.com" method="post" enctype="text/plain">
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo" required>
-        <textarea placeholder="Comentario" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+      
+<form id="form-contacto" action="https://formspree.io/f/mvgkbbne" method="POST">
+  <!-- Formulario de contacto final -->
+  <input type="text" name="nombre" placeholder="Nombre" required>
+  <input type="email" name="correo" placeholder="Correo" required>
+  <textarea name="comentario" placeholder="Comentario" required></textarea>
+  <button type="submit">Enviar</button>
+</form>
+
       <!-- CORREO CONTACTO: musictowork.clup@gmail.com -->
     </section>
   </main>
